@@ -24,27 +24,36 @@ const HeroSection = () => {
               <span className="text-sm font-medium text-gray-800">בלעדי: 50 המצטרפים הראשונים</span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              <span className="gradient-text">רוקסן!</span>
-              <br /> יצירת תמונת מוצר שסולקות באמצעות AI
-            </h1>
+            <div className="space-y-2">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                <span className="gradient-text">רוקסן!</span>
+              </h1>
+              <h2 className="text-4xl md:text-5xl font-bold">יצירת תמונת מוצר שסולקות באמצעות AI</h2>
+              
+              {/* Animated gradient underline */}
+              <div className="relative h-2 w-48 mt-2 overflow-hidden rounded-full">
+                <div className="absolute inset-0 bg-gradient-to-r from-roxane-dark via-roxane to-roxane-light animate-shimmer"></div>
+              </div>
+            </div>
             
             <p className="text-lg md:text-xl text-gray-700 max-w-lg">
-              רוקסן מאפשרת ללקוחות שלך למדוד בגדים באופן וירטואלי, מגדילה את אחוזי המכירה ומפחיתה החזרות.
+              רוקסן AI מייצרת עבורך תמונות מוצר ברמה הגבוהה ביותר, שנראות כל כך טוב שהן מוכרות בשבילך – יותר לקוחות, יותר מכירות, פחות החזרות! 🚀
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="#early-access" 
-                className="px-8 py-3 rounded-lg bg-gradient-to-r from-roxane-dark to-roxane text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+                className="px-8 py-3 rounded-lg bg-gradient-to-r from-roxane-dark to-roxane text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group relative overflow-hidden button-shine"
               >
-                הרשמה לגישה מוקדמת
-                <ArrowLeft size={18} className="mr-2 transition-transform duration-300 group-hover:-translate-x-1" />
+                <span className="relative z-10">הרשמה לגישה מוקדמת</span>
+                <ArrowLeft size={18} className="mr-2 transition-transform duration-300 group-hover:-translate-x-1 relative z-10" />
+                {/* Button shine effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-1000"></div>
               </a>
               
               <a 
                 href="#features" 
-                className="glass-button px-8 py-3 rounded-lg text-gray-800 font-medium flex items-center justify-center"
+                className="glass-button px-8 py-3 rounded-lg text-gray-800 font-medium flex items-center justify-center hover:scale-105 transition-transform duration-300"
               >
                 גלה עוד
               </a>

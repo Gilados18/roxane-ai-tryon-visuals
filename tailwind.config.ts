@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -146,6 +145,14 @@ export default {
 						transform: 'translateY(0)',
 						opacity: '1'
 					}
+				},
+				'shimmer': {
+					'0%': {
+						backgroundPosition: '-100% 0'
+					},
+					'100%': {
+						backgroundPosition: '100% 0'
+					}
 				}
 			},
 			animation: {
@@ -156,7 +163,8 @@ export default {
 				'fade-in-left': 'fade-in-left 0.8s ease-out forwards',
 				'float': 'float 6s ease-in-out infinite',
 				'pulse-light': 'pulse-light 4s ease-in-out infinite',
-				'slide-up': 'slide-up 0.7s ease-out forwards'
+				'slide-up': 'slide-up 0.7s ease-out forwards',
+				'shimmer': 'shimmer 2s linear infinite'
 			},
 			fontFamily: {
 				'sans': ['Assistant', 'ui-sans-serif', 'system-ui'],

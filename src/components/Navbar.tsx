@@ -31,11 +31,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <img 
-            src="/lovable-uploads/c91036bf-bcc8-4fe5-9019-6ece6f90f143.png" 
-            alt="Roxane AI" 
-            className="h-10"
-          />
+          <span className="gradient-text text-2xl font-bold">רוקסן!</span>
         </div>
 
         {/* Desktop Navigation */}
