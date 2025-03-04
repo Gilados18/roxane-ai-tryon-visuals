@@ -160,14 +160,6 @@ const TestimonialsSection = () => {
             />
           ))}
         </div>
-        
-        <div className="mt-16 flex flex-wrap justify-center gap-8 items-center">
-          <img src="https://cdn.worldvectorlogo.com/logos/shopify.svg" alt="Shopify" className="h-8 opacity-70 hover:opacity-100 transition-opacity" />
-          <img src="https://cdn.worldvectorlogo.com/logos/woocommerce.svg" alt="WooCommerce" className="h-8 opacity-70 hover:opacity-100 transition-opacity" />
-          <img src="https://cdn.worldvectorlogo.com/logos/magento-2.svg" alt="Magento" className="h-8 opacity-70 hover:opacity-100 transition-opacity" />
-          <img src="https://cdn.worldvectorlogo.com/logos/bigcommerce.svg" alt="BigCommerce" className="h-8 opacity-70 hover:opacity-100 transition-opacity" />
-          <img src="https://cdn.worldvectorlogo.com/logos/prestashop.svg" alt="PrestaShop" className="h-8 opacity-70 hover:opacity-100 transition-opacity" />
-        </div>
       </div>
     </section>
   );

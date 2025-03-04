@@ -10,7 +10,7 @@ import { useEffect } from "react";
 const Index = () => {
   useEffect(() => {
     // Set page title and description
-    document.title = "רוקסן AI - פתרונות מדידה וירטואלית לעסקי מסחר אלקטרוני";
+    document.title = "רוקסן AI - יצירת תמונת מוצר שסולקות באמצעות AI";
     
     // Add Font Awesome for social icons
     const script = document.createElement("script");

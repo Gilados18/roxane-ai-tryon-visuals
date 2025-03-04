@@ -25,8 +25,8 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              <span className="gradient-text">התמדה חכמה</span>
-              <br /> לעסקי מסחר אלקטרוני
+              <span className="gradient-text">רוקסן!</span>
+              <br /> יצירת תמונת מוצר שסולקות באמצעות AI
             </h1>
             
             <p className="text-lg md:text-xl text-gray-700 max-w-lg">
