@@ -2,7 +2,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import EarlyAccessSection from "@/components/EarlyAccessSection";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
@@ -30,9 +29,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <FeaturesSection />
-      <TestimonialsSection />
       <EarlyAccessSection />
-      <Footer />
     </div>
   );
 };
