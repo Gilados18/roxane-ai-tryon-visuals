@@ -47,7 +47,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="#early-access" 
-                className="px-8 py-3 rounded-lg bg-gradient-to-r from-roxane-dark to-roxane text-white font-medium shadow-lg transition-all duration-300 flex items-center justify-center group relative overflow-hidden"
+                className="px-8 py-3 rounded-xl bg-gradient-to-r from-roxane-dark to-roxane text-white font-medium shadow-lg transition-all duration-300 flex items-center justify-center group relative overflow-hidden"
               >
                 <span className="relative z-10 transition-transform duration-300 group-hover:scale-105">התחילו עכשיו - 50 ראשונים בלבד במחיר ניסיון</span>
                 <ArrowLeft size={18} className="mr-2 transition-transform duration-300 group-hover:-translate-x-1 relative z-10" />

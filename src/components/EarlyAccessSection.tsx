@@ -56,7 +56,7 @@ const EarlyAccessSection = () => {
             </h2>
             
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              אנו מציעים גישה בלעדית ל-50 העסקים הראשונים שירשמו. הקדימו להירשם לפני שכל המקומות יתמלאו!
+              אנו מציעים גישה בלעדית ל-50 העסקים הראשונים שירשמו. הקדימו להירשם!
             </p>
           </div>
           
@@ -112,7 +112,7 @@ const EarlyAccessSection = () => {
                 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-lg bg-gradient-to-r from-roxane-dark to-roxane text-white font-medium shadow-lg transition-all duration-300 flex items-center justify-center group relative overflow-hidden animate-on-scroll opacity-0"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-roxane-dark to-roxane text-white font-medium shadow-lg transition-all duration-300 flex items-center justify-center group relative overflow-hidden animate-on-scroll opacity-0"
                   data-animation="fade-up"
                   style={{ transitionDelay: '400ms' }}
                 >
