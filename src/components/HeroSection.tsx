@@ -26,9 +26,9 @@ const HeroSection = () => {
             
             <div className="space-y-2">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                <span className="gradient-text">רוקסן!</span>
+                <span className="gradient-text">ROXANE AI</span>
               </h1>
-              <h2 className="text-4xl md:text-5xl font-bold">יצירת תמונת מוצר שסולקות באמצעות AI</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">צרו תמונות מוצר מושלמות בלחיצת כפתור</h2>
               
               {/* Animated gradient underline */}
               <div className="relative h-2 w-48 mt-2 overflow-hidden rounded-full">
@@ -36,8 +36,12 @@ const HeroSection = () => {
               </div>
             </div>
             
+            <h3 className="text-xl md:text-2xl text-gray-800 font-medium">
+              מהפכה בעולם הוויזואלי לאיקומרס וחנויות פיזיות!
+            </h3>
+            
             <p className="text-lg md:text-xl text-gray-700 max-w-lg">
-              רוקסן AI מייצרת עבורך תמונות מוצר ברמה הגבוהה ביותר, שנראות כל כך טוב שהן מוכרות בשבילך – יותר לקוחות, יותר מכירות, פחות החזרות! 🚀
+              ROXANE AI מאפשרת לך לייצר תמונות מקצועיות של המוצרים שלך באמצעות בינה מלאכותית מתקדמת, ללא צורך בצילומים יקרים או בדוגמנים וימי צילום. בין אם אתה מוכר נעליים, בגדים, אקססוריז או כל מוצר פיזי אחר – עכשיו תוכל להציג אותם בצורה המושכת ביותר בקלות ובמהירות בכמה דקות בלבד.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -45,7 +49,7 @@ const HeroSection = () => {
                 href="#early-access" 
                 className="px-8 py-3 rounded-lg bg-gradient-to-r from-roxane-dark to-roxane text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group relative overflow-hidden button-shine"
               >
-                <span className="relative z-10">הרשמה לגישה מוקדמת</span>
+                <span className="relative z-10">התחילו עכשיו - 50 ראשונים בלבד במחיר ניסיון</span>
                 <ArrowLeft size={18} className="mr-2 transition-transform duration-300 group-hover:-translate-x-1 relative z-10" />
                 {/* Button shine effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-1000"></div>
@@ -72,7 +76,7 @@ const HeroSection = () => {
                 
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
                   <div className="glass-card rounded-lg p-4">
-                    <p className="text-gray-800 font-medium">מדידה וירטואלית בזמן אמת</p>
+                    <p className="text-gray-800 font-medium">תמונות מוצר מקצועיות</p>
                     <p className="text-gray-600 text-sm">AI מתקדם ליצירת תוכן</p>
                   </div>
                 </div>

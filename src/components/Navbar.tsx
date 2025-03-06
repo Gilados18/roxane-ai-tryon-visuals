@@ -31,7 +31,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <span className="gradient-text text-2xl font-bold">רוקסן!</span>
+          <span className="gradient-text text-2xl font-bold">Roxane AI</span>
         </div>
 
         {/* Desktop Navigation */}
@@ -39,8 +39,8 @@ const Navbar = () => {
           <a href="#features" className="text-gray-800 hover:text-roxane transition-colors duration-300 font-medium">
             מאפיינים
           </a>
-          <a href="#testimonials" className="text-gray-800 hover:text-roxane transition-colors duration-300 font-medium">
-            לקוחות מרוצים
+          <a href="#how-it-works" className="text-gray-800 hover:text-roxane transition-colors duration-300 font-medium">
+            איך זה עובד
           </a>
           <a href="#early-access" className="text-gray-800 hover:text-roxane transition-colors duration-300 font-medium">
             שימוש מוקדם
@@ -73,11 +73,11 @@ const Navbar = () => {
             מאפיינים
           </a>
           <a 
-            href="#testimonials" 
+            href="#how-it-works" 
             className="text-gray-800 hover:text-roxane transition-colors duration-300 font-medium"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            לקוחות מרוצים
+            איך זה עובד
           </a>
           <a 
             href="#early-access" 
