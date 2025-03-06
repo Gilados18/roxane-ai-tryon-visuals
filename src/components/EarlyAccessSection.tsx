@@ -98,13 +98,6 @@ const EarlyAccessSection = () => {
             </div>
           ) : (
             <>
-              <div className="flex justify-center mb-8">
-                <div className="glass-card rounded-xl px-6 py-3 flex items-center">
-                  <div className="w-3 h-3 bg-roxane rounded-full animate-pulse mr-2"></div>
-                  <span className="text-roxane font-medium">נותרו עוד {spotsLeft} מקומות בלבד!</span>
-                </div>
-              </div>
-              
               <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">שם מלא</label>

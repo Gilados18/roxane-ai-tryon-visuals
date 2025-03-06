@@ -13,7 +13,7 @@ import EarlyAccessSection from "@/components/EarlyAccessSection";
 const Index = () => {
   useEffect(() => {
     // Set page title and description
-    document.title = "ROXANE AI - צרו תמונות מוצר מושלמות בלחיצת כפתור";
+    document.title = "Roxane AI - צרו תמונות מוצר מושלמות בלחיצת כפתור";
     
     // Add Font Awesome for social icons
     const script = document.createElement("script");
@@ -27,7 +27,7 @@ const Index = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-slide-up');
+          entry.target.classList.remove('opacity-0');
           observer.unobserve(entry.target);
         }
       });
