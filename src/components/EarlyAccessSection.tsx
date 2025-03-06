@@ -12,32 +12,7 @@ const EarlyAccessSection = () => {
   const [business, setBusiness] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isRegistrationClosed, setIsRegistrationClosed] = useState(spotsLeft <= 0);
-  const [isVisible, setIsVisible] = useState(false);
   
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.disconnect();
-      }
-    };
-  }, []);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -65,14 +40,11 @@ const EarlyAccessSection = () => {
 
   return (
     <section id="early-access" className="py-20 px-6 md:px-12 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden">
-      <div 
-        ref={ref}
-        className={`max-w-5xl mx-auto ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
-      >
+      <div className="max-w-5xl mx-auto">
         {/* Background Elements */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-64 bg-roxane/5 filter blur-3xl"></div>
         
-        <div className="glass-card rounded-2xl overflow-hidden shadow-xl border border-white/50 p-8 md:p-10 relative z-10">
+        <div className="glass-card rounded-2xl overflow-hidden shadow-xl border border-white/50 p-8 md:p-10 relative z-10 animate-on-scroll opacity-0" data-animation="fade-up">
           <div className="text-center mb-12">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-roxane/10 mb-4">
               <Sparkles size={16} className="text-roxane ml-2" />
@@ -89,7 +61,7 @@ const EarlyAccessSection = () => {
           </div>
           
           {isRegistrationClosed ? (
-            <div className="text-center py-8 glass-card rounded-xl">
+            <div className="text-center py-8 glass-card rounded-xl animate-on-scroll opacity-0" data-animation="fade-up">
               <AlertTriangle size={48} className="mx-auto mb-4 text-amber-500" />
               <h3 className="text-2xl font-bold mb-2">ההרשמה הסתיימה!</h3>
               <p className="text-gray-700">
@@ -99,7 +71,7 @@ const EarlyAccessSection = () => {
           ) : (
             <>
               <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
-                <div>
+                <div className="animate-on-scroll opacity-0" data-animation="fade-up" style={{ transitionDelay: '100ms' }}>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">שם מלא</label>
                   <input
                     type="text"
@@ -112,7 +84,7 @@ const EarlyAccessSection = () => {
                   />
                 </div>
                 
-                <div>
+                <div className="animate-on-scroll opacity-0" data-animation="fade-up" style={{ transitionDelay: '200ms' }}>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">כתובת אימייל</label>
                   <input
                     type="email"
@@ -125,7 +97,7 @@ const EarlyAccessSection = () => {
                   />
                 </div>
                 
-                <div>
+                <div className="animate-on-scroll opacity-0" data-animation="fade-up" style={{ transitionDelay: '300ms' }}>
                   <label htmlFor="business" className="block text-sm font-medium text-gray-700 mb-2">סוג העסק</label>
                   <input
                     type="text"
@@ -140,9 +112,17 @@ const EarlyAccessSection = () => {
                 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-lg bg-gradient-to-r from-roxane-dark to-roxane text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+                  className="w-full py-4 rounded-lg bg-gradient-to-r from-roxane-dark to-roxane text-white font-medium shadow-lg transition-all duration-300 flex items-center justify-center group relative overflow-hidden animate-on-scroll opacity-0"
+                  data-animation="fade-up"
+                  style={{ transitionDelay: '400ms' }}
                 >
-                  הרשמה לגישה מוקדמת
+                  <span className="relative z-10 transition-transform duration-300 group-hover:scale-105">הרשמה לגישה מוקדמת</span>
+                  
+                  {/* Modern gradient hover effect */}
+                  <span className="absolute inset-0 bg-gradient-to-tr from-roxane-dark via-roxane to-roxane-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md"></span>
+                  
+                  {/* Modern shimmer effect */}
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out"></span>
                 </button>
               </form>
             </>

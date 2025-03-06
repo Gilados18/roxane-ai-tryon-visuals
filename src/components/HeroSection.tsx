@@ -26,7 +26,7 @@ const HeroSection = () => {
             
             <div className="space-y-2">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                <span className="gradient-text">ROXANE AI</span>
+                <span className="gradient-text">Roxane AI</span>
               </h1>
               <h2 className="text-3xl md:text-4xl font-bold">צרו תמונות מוצר מושלמות בלחיצת כפתור</h2>
               
@@ -41,25 +41,35 @@ const HeroSection = () => {
             </h3>
             
             <p className="text-lg md:text-xl text-gray-700 max-w-lg">
-              ROXANE AI מאפשרת לך לייצר תמונות מקצועיות של המוצרים שלך באמצעות בינה מלאכותית מתקדמת, ללא צורך בצילומים יקרים או בדוגמנים וימי צילום. בין אם אתה מוכר נעליים, בגדים, אקססוריז או כל מוצר פיזי אחר – עכשיו תוכל להציג אותם בצורה המושכת ביותר בקלות ובמהירות בכמה דקות בלבד.
+              Roxane AI מאפשרת לך לייצר תמונות מקצועיות של המוצרים שלך באמצעות בינה מלאכותית מתקדמת, ללא צורך בצילומים יקרים או בדוגמנים וימי צילום. בין אם אתה מוכר נעליים, בגדים, אקססוריז או כל מוצר פיזי אחר – עכשיו תוכל להציג אותם בצורה המושכת ביותר בקלות ובמהירות בכמה דקות בלבד.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="#early-access" 
-                className="px-8 py-3 rounded-lg bg-gradient-to-r from-roxane-dark to-roxane text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group relative overflow-hidden button-shine"
+                className="px-8 py-3 rounded-lg bg-gradient-to-r from-roxane-dark to-roxane text-white font-medium shadow-lg transition-all duration-300 flex items-center justify-center group relative overflow-hidden"
               >
-                <span className="relative z-10">התחילו עכשיו - 50 ראשונים בלבד במחיר ניסיון</span>
+                <span className="relative z-10 transition-transform duration-300 group-hover:scale-105">התחילו עכשיו - 50 ראשונים בלבד במחיר ניסיון</span>
                 <ArrowLeft size={18} className="mr-2 transition-transform duration-300 group-hover:-translate-x-1 relative z-10" />
-                {/* Button shine effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-1000"></div>
+                
+                {/* Modern gradient hover effect */}
+                <span className="absolute inset-0 bg-gradient-to-tr from-roxane-dark via-roxane to-roxane-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md"></span>
+                
+                {/* Modern shimmer effect */}
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out"></span>
               </a>
               
               <a 
                 href="#features" 
-                className="glass-button px-8 py-3 rounded-lg text-gray-800 font-medium flex items-center justify-center hover:scale-105 transition-transform duration-300"
+                className="relative overflow-hidden px-8 py-3 rounded-lg text-gray-800 font-medium flex items-center justify-center group"
               >
-                גלה עוד
+                <span className="relative z-10 transition-transform duration-300 group-hover:scale-105">גלה עוד</span>
+                
+                {/* Glass morphism background that changes on hover */}
+                <span className="absolute inset-0 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg transition-all duration-300 group-hover:bg-white/30 group-hover:shadow-lg"></span>
+                
+                {/* Subtle border animation */}
+                <span className="absolute inset-0 rounded-lg border border-roxane/0 group-hover:border-roxane/30 transition-all duration-500"></span>
               </a>
             </div>
           </div>

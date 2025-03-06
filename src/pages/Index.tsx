@@ -21,17 +21,21 @@ const Index = () => {
     script.crossOrigin = "anonymous";
     document.body.appendChild(script);
     
-    // Initialize animations
-    const animatedElements = document.querySelectorAll('.animate-slide-up');
+    // Initialize advanced scroll animations
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
     
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          entry.target.classList.add('animate-active');
           entry.target.classList.remove('opacity-0');
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { 
+      threshold: 0.15,
+      rootMargin: '0px 0px -10% 0px' 
+    });
     
     animatedElements.forEach(el => observer.observe(el));
     
