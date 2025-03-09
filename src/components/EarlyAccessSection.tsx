@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { CheckCircle, AlertTriangle, Sparkles } from 'lucide-react';
 import { toast } from "@/components/ui/use-toast";
@@ -5,11 +6,11 @@ import { toast } from "@/components/ui/use-toast";
 const MAX_SPOTS = 50;
 const INITIAL_SPOTS_TAKEN = 37; // Starting with 37 spots taken, 13 left
 
-// Google Form configuration
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdBMd62GcMJ3BlEZQzIypobvD33EUXxZPeMEDhx47GWSbiZxw/formResponse";
-const NAME_ENTRY = "entry.1200460067"; 
-const EMAIL_ENTRY = "entry.274607137"; 
-const BUSINESS_ENTRY = "entry.1300376733";
+// Replace this URL with your actual Google Form submission URL
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdYZDvzwbUq9b9lKXeU2b-xygYKmflXp34IekR_avZGP6_xOw/formResponse";
+const NAME_ENTRY = "entry.123456789"; // Replace with your actual form field entry ID
+const EMAIL_ENTRY = "entry.987654321"; // Replace with your actual form field entry ID
+const BUSINESS_ENTRY = "entry.456789123"; // Replace with your actual form field entry ID
 
 const EarlyAccessSection = () => {
   const [spotsLeft, setSpotsLeft] = useState(MAX_SPOTS - INITIAL_SPOTS_TAKEN);
