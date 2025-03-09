@@ -1,23 +1,49 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { CheckCircle, AlertTriangle, Sparkles } from 'lucide-react';
+import { toast } from "@/components/ui/use-toast";
 
 const MAX_SPOTS = 50;
 const INITIAL_SPOTS_TAKEN = 37; // Starting with 37 spots taken, 13 left
+
+// Replace this URL with your actual Google Form submission URL
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdYZDvzwbUq9b9lKXeU2b-xygYKmflXp34IekR_avZGP6_xOw/formResponse";
+const NAME_ENTRY = "entry.123456789"; // Replace with your actual form field entry ID
+const EMAIL_ENTRY = "entry.987654321"; // Replace with your actual form field entry ID
+const BUSINESS_ENTRY = "entry.456789123"; // Replace with your actual form field entry ID
 
 const EarlyAccessSection = () => {
   const [spotsLeft, setSpotsLeft] = useState(MAX_SPOTS - INITIAL_SPOTS_TAKEN);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [business, setBusiness] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isRegistrationClosed, setIsRegistrationClosed] = useState(spotsLeft <= 0);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Simulate form submission
-    setTimeout(() => {
+    if (isSubmitting) return;
+    
+    setIsSubmitting(true);
+    
+    try {
+      // Create a hidden form to submit to Google Forms
+      const formData = new FormData();
+      formData.append(NAME_ENTRY, name);
+      formData.append(EMAIL_ENTRY, email);
+      formData.append(BUSINESS_ENTRY, business);
+      
+      // Submit the form data to Google Forms
+      const response = await fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        mode: 'no-cors', // This is important for cross-domain requests to Google Forms
+        body: formData
+      });
+      
+      // Update the spots counter
       setSpotsLeft(prev => {
         const newSpotsLeft = Math.max(0, prev - 1);
         if (newSpotsLeft <= 0) {
@@ -26,7 +52,14 @@ const EarlyAccessSection = () => {
         return newSpotsLeft;
       });
       
+      // Show success message
       setIsSubmitted(true);
+      toast({
+        title: "הרשמה הושלמה בהצלחה!",
+        description: "תודה על הרשמתך. נשלח אליך דוא\"ל עם פרטים נוספים בקרוב.",
+      });
+      
+      // Reset form
       setName('');
       setEmail('');
       setBusiness('');
@@ -35,7 +68,16 @@ const EarlyAccessSection = () => {
       setTimeout(() => {
         setIsSubmitted(false);
       }, 3000);
-    }, 1000);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "שגיאה בהרשמה",
+        description: "אירעה שגיאה בעת שליחת הטופס. אנא נסה שנית.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -115,8 +157,11 @@ const EarlyAccessSection = () => {
                   className="w-full py-4 rounded-xl bg-gradient-to-r from-roxane-dark to-roxane text-white font-medium shadow-lg transition-all duration-300 flex items-center justify-center group relative overflow-hidden animate-on-scroll opacity-0"
                   data-animation="fade-up"
                   style={{ transitionDelay: '400ms' }}
+                  disabled={isSubmitting}
                 >
-                  <span className="relative z-10 transition-transform duration-300 group-hover:scale-105">הרשמה לגישה מוקדמת</span>
+                  <span className="relative z-10 transition-transform duration-300 group-hover:scale-105">
+                    {isSubmitting ? "שולח..." : "הרשמה לגישה מוקדמת"}
+                  </span>
                   
                   {/* Modern gradient hover effect */}
                   <span className="absolute inset-0 bg-gradient-to-tr from-roxane-dark via-roxane to-roxane-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md"></span>
@@ -125,6 +170,15 @@ const EarlyAccessSection = () => {
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out"></span>
                 </button>
               </form>
+              
+              {/* Hidden iframe for Google Form submission */}
+              <iframe 
+                ref={iframeRef}
+                name="hidden_iframe" 
+                id="hidden_iframe" 
+                style={{ display: 'none' }} 
+                title="Google Form Submission"
+              ></iframe>
             </>
           )}
           
