@@ -79,7 +79,7 @@ const HeroSection = () => {
             <div className="relative z-10 floating-element">
               <div className="glass-card rounded-2xl overflow-hidden shadow-xl border-2 border-white">
                 <img 
-                  src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
+                  src="/lovable-uploads/ac34a626-2c5f-4edc-bf70-12dcf37dd227.png" 
                   alt="Roxane AI virtual try-on" 
                   className="w-full h-auto rounded-xl object-cover"
                 />
