@@ -74,18 +74,18 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Hero Image - Simplified with just the image and animations */}
+          {/* Hero Image - Larger without border */}
           <div className={`relative ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
-            <div className="relative z-10 floating-element">
+            <div className="relative z-10 floating-element w-[120%] max-w-[600px] mx-auto">
               <img 
                 src="/lovable-uploads/ac34a626-2c5f-4edc-bf70-12dcf37dd227.png" 
                 alt="Roxane AI virtual try-on" 
-                className="w-full h-auto rounded-xl object-cover shadow-lg"
+                className="w-full h-auto rounded-lg object-cover"
               />
             </div>
             
-            {/* Glow Effect */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full glow"></div>
+            {/* Enhanced Glow Effect */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] glow"></div>
           </div>
         </div>
       </div>
