@@ -74,28 +74,14 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Hero Image */}
+          {/* Hero Image - Simplified with just the image and animations */}
           <div className={`relative ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
             <div className="relative z-10 floating-element">
-              <div className="glass-card rounded-2xl overflow-hidden shadow-xl border-2 border-white">
-                <img 
-                  src="/lovable-uploads/ac34a626-2c5f-4edc-bf70-12dcf37dd227.png" 
-                  alt="Roxane AI virtual try-on" 
-                  className="w-full h-auto rounded-xl object-cover"
-                />
-                
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
-                  <div className="glass-card rounded-lg p-4">
-                    <p className="text-gray-800 font-medium">תמונות מוצר מקצועיות</p>
-                    <p className="text-gray-600 text-sm">AI מתקדם ליצירת תוכן</p>
-                  </div>
-                </div>
-                
-                <div className="absolute top-4 right-4 glass-card rounded-full px-4 py-1 flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                  <span className="text-sm text-gray-800">טכנולוגיית AI</span>
-                </div>
-              </div>
+              <img 
+                src="/lovable-uploads/ac34a626-2c5f-4edc-bf70-12dcf37dd227.png" 
+                alt="Roxane AI virtual try-on" 
+                className="w-full h-auto rounded-xl object-cover shadow-lg"
+              />
             </div>
             
             {/* Glow Effect */}
