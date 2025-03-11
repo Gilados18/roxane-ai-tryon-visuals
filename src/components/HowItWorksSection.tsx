@@ -56,18 +56,10 @@ const HowItWorksSection = () => {
               <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl border-2 border-purple-100">
                 {/* GIF display */}
                 <img 
-                  src="/assets/how-it-works.gif" 
+                  src="/how-it-works.gif" 
                   alt="How Roxane AI works" 
                   className="w-full h-full object-cover"
                 />
-                
-                {/* Placeholder with instructions (remove once GIF is uploaded) */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-r from-purple-50 to-roxane-light/20 text-center p-6">
-                  <p className="text-lg font-medium mb-3">כאן יוצג סרטון GIF שמסביר את התהליך</p>
-                  <p className="text-sm text-gray-700">
-                    להצגת ה-GIF: העלה קובץ בשם "how-it-works.gif" לתיקיית "public/assets/"
-                  </p>
-                </div>
               </div>
               
               <div className="text-center mt-6">
