@@ -28,24 +28,54 @@ const HowItWorksSection = () => {
           <div className="h-1 w-24 bg-gradient-to-r from-roxane-dark to-roxane-light rounded-full mx-auto"></div>
         </div>
         
-        <div className="flex flex-col gap-8 max-w-2xl mx-auto">
-          {steps.map((step, index) => (
-            <div 
-              key={index} 
-              className="glass-card p-8 rounded-2xl flex flex-col items-center animate-on-scroll opacity-0"
-              data-animation="fade-up"
-              style={{ transitionDelay: `${index * 250}ms` }}
-            >
-              <div className="text-5xl mb-4">{step.number}</div>
-              <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-              <p className="text-gray-700 text-center">{step.description}</p>
+        <div className="flex flex-col lg:flex-row gap-8 items-start">
+          {/* Steps Column */}
+          <div className="lg:w-1/2 flex flex-col gap-8">
+            {steps.map((step, index) => (
+              <div 
+                key={index} 
+                className="glass-card p-8 rounded-2xl flex flex-col items-center animate-on-scroll opacity-0"
+                data-animation="fade-up"
+                style={{ transitionDelay: `${index * 250}ms` }}
+              >
+                <div className="text-5xl mb-4">{step.number}</div>
+                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+                <p className="text-gray-700 text-center">{step.description}</p>
+                
+                {/* Decorative line connecting to next step (only on mobile) */}
+                {index < steps.length - 1 && (
+                  <div className="relative w-1 h-10 bg-gradient-to-b from-roxane-dark to-roxane-light rounded-full mt-4 lg:hidden overflow-visible after:content-[''] after:absolute after:left-1/2 after:top-full after:w-3 after:h-3 after:rounded-full after:bg-roxane-light after:-translate-x-1/2 after:animate-pulse"></div>
+                )}
+              </div>
+            ))}
+          </div>
+          
+          {/* GIF Display Column */}
+          <div className="lg:w-1/2 animate-on-scroll opacity-0" data-animation="fade-left">
+            <div className="sticky top-24 glass-card p-6 rounded-2xl overflow-hidden">
+              <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl border-2 border-purple-100">
+                {/* GIF display */}
+                <img 
+                  src="/assets/how-it-works.gif" 
+                  alt="How Roxane AI works" 
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Placeholder with instructions (remove once GIF is uploaded) */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-r from-purple-50 to-roxane-light/20 text-center p-6">
+                  <p className="text-lg font-medium mb-3">כאן יוצג סרטון GIF שמסביר את התהליך</p>
+                  <p className="text-sm text-gray-700">
+                    להצגת ה-GIF: העלה קובץ בשם "how-it-works.gif" לתיקיית "public/assets/"
+                  </p>
+                </div>
+              </div>
               
-              {/* Decorative line connecting to next step */}
-              {index < steps.length - 1 && (
-                <div className="relative w-1 h-10 bg-gradient-to-b from-roxane-dark to-roxane-light rounded-full mt-4 overflow-visible after:content-[''] after:absolute after:left-1/2 after:top-full after:w-3 after:h-3 after:rounded-full after:bg-roxane-light after:-translate-x-1/2 after:animate-pulse"></div>
-              )}
+              <div className="text-center mt-6">
+                <h3 className="text-xl font-bold gradient-text mb-2">ראה את הקסם בפעולה</h3>
+                <p className="text-gray-700">הפלטפורמה שלנו הופכת תמונות פשוטות לויזואלים מקצועיים</p>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
